@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
-fromt wtforms.validators import DataRequired, Length, Email, EqualTo
+from wtforms.validators import DataRequired, Length, Email, EqualTo
+import email_validator
 
 
 class RegistrationForm(FlaskForm):
@@ -22,4 +23,4 @@ class LoginForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired()])
     remember = BooleanField("Remember Me")
 
-    submit = SubmitField("Log In")
+    submit = SubmitField("Sign In")

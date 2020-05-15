@@ -1,9 +1,13 @@
 from flask import Flask, render_template, url_for, flash, redirect
+from flask_sqlalchemy import SQLAlchemy
 from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = "7444f4c651c0b91684124cbfe1cb144b"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///flaskblog.db"
+
+db = SQLAlchemy(app)
 
 posts = [
     {
